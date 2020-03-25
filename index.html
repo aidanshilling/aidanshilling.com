@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aidanshilling.com</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <object id='bluething' type="image/svg+xml" data="bluething.svg"></object>
+    <div id="app">
+        <div class="flex-container">
+            <big-header style="flex-grow: 1" v-bind:message='title'></big-header>
+            <basic-button style="flex-grow: 0; flex-shrink: 0; flex-basis: 0" text='Contact'></basic-button>
+        </div>
+        <big-caption v-bind:message='caption'></big-caption>
+        <paragraph v-bind:text='about.text'></paragraph>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="components/app.js"></script>
+</body>
+</html>

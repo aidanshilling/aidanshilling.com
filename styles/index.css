@@ -1,0 +1,67 @@
+:root {
+	--main-bg-color: #0a0a16;
+	--main-side-padding: 60px;
+}
+
+body {
+	margin: 0;
+	background-color: var(--main-bg-color);
+}
+
+#bluething {
+	position: absolute;
+	border: 0;
+	top: 0;
+	right: 0;
+	margin: 0;
+	width: 50%;
+	z-index: -1;
+	margin-bottom: -400px;
+}
+
+#app {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	padding-left: var(--main-side-padding);
+	padding-right: var(--main-side-padding);
+	margin-top: 2vh;
+}
+
+.flex-container {
+	display: flex;
+}
+
+.big-header {
+	font-size: 10vh;
+	margin: 0;
+	color: #ffffff;
+}
+
+.big-caption {
+	font-size: 5vh;
+	font-weight: 250;
+	margin: 0;
+	color: #0053f8;
+}
+
+.basic-button {
+	margin-top: 3vh;
+	margin-left: 5vh;
+	font-size: 2vh;
+	width: min-content;
+	color: #ffffff;
+	border: none;
+	border-radius: .8vh;
+	height: 4vh;
+	padding-right: 2vh;
+	padding-left: 2vh;
+	background-color: #0053f8;
+	box-shadow: 0px 0px 5px #0053f8;
+}
+
+.paragraph {
+	margin-top: 7.5vh;
+	margin-bottom: 7.5vh;
+	font-size: 2.5vh;
+	color: #ffffff;
+	width: 45vh;
+}
