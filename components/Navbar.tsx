@@ -1,38 +1,64 @@
-import Link from "next/link";
+"use client";
 
-interface NavItemType {
+import Link from "next/link";
+import { useState } from "react";
+
+interface NavObject {
 	name: string;
 	href: string;
-	selected: boolean;
 }
 
-const navItems: NavItemType[] = [
-	{ name: "Home", href: "/", selected: true },
-	{ name: "Projects", href: "/projects", selected: false },
-	{ name: "Blog", href: "/projects", selected: false },
-	{ name: "About", href: "/projects", selected: false },
+interface NavItemProps extends NavObject {
+	id: number;
+	selected: number;
+	onClick: () => void;
+}
+
+const navItems: NavObject[] = [
+	{ name: "Home", href: "/" },
+	{ name: "Projects", href: "/projects" },
+	{ name: "Blog", href: "/projects" },
+	{ name: "About", href: "/projects" },
 ];
 
 const Navbar = () => {
+	const [selected, setSelected] = useState<number>(0);
+
 	return (
 		<div className="flex flex-row m-8 justify-between">
 			<div className="my-auto">Contact me</div>
 			<div className="flex flex-row  p-2 rounded-full justify-center bg-gray-100">
-				{navItems.map((item) => (
-					<NavItem name={item.name} href={item.href} selected={item.selected} />
+				{navItems.map((item, idx) => (
+					<NavItem
+						key={`navbar-${idx}`}
+						id={idx}
+						name={item.name}
+						href={item.href}
+						selected={selected}
+						onClick={() => {
+							setSelected(idx);
+						}}
+					/>
 				))}
 			</div>
 		</div>
 	);
 };
 
-const NavItem = ({ name, href, selected }: NavItemType) => {
+const NavItem = ({ name, href, selected, onClick, id }: NavItemProps) => {
 	const selectedStyle = "rounded-full bg-gray-200";
 
 	return (
-		<div className={`${selected ? selectedStyle : ""} px-4 py-2 text-gray-900 text-sm text-center hover:text-blue-600`}>
-			<Link href={href}>{name}</Link>
-		</div>
+		<Link href={href}>
+			<div
+				onClick={onClick}
+				className={`${
+					selected == id ? selectedStyle : ""
+				} px-4 py-2 text-gray-900 text-sm text-center hover:text-blue-600`}
+			>
+				{name}
+			</div>
+		</Link>
 	);
 };
 
