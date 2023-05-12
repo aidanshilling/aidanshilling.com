@@ -1,13 +1,10 @@
 import Container from "@/components/Container";
+import Header from "@/components/Heaader";
 
 export default function Home() {
 	return (
 		<Container>
-			<div className="text-gray-900 text-lg py-24">
-				<div className="mb-4">Hi, my name is</div>
-				<div className="text-5xl font-bold">Aidan Shilling.</div>
-				<div className="text-5xl font-bold text-gray-500">I develop software.</div>
-			</div>
+			<Header title="Aidan Shilling." subtitle="I develop software 🧑‍💻" intro="👋Hi, my name is" />
 		</Container>
 	);
 }
