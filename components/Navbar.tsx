@@ -15,8 +15,9 @@ const navItems: NavItemType[] = [
 
 const Navbar = () => {
 	return (
-		<div className="flex flex-row justify-center">
-			<div className="flex flex-row m-8 p-2 rounded-full justify-center bg-gray-100">
+		<div className="flex flex-row m-8 justify-between">
+			<div className="my-auto">Contact me</div>
+			<div className="flex flex-row  p-2 rounded-full justify-center bg-gray-100">
 				{navItems.map((item) => (
 					<NavItem name={item.name} href={item.href} selected={item.selected} />
 				))}
