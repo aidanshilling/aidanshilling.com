@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface NavObject {
 	name: string;
@@ -25,8 +26,8 @@ const Navbar = () => {
 	const [selected, setSelected] = useState<number>(0);
 
 	return (
-		<div className="flex flex-row p-8 justify-between w-screen">
-			<div className="my-auto">Contact me</div>
+		<div className="flex flex-row p-8 justify-center md:justify-between w-screen">
+			<div className="my-auto max-md:hidden">Contact me</div>
 			<div className="flex flex-row  p-2 rounded-full justify-center bg-gray-100">
 				{navItems.map((item, idx) => (
 					<NavItem
