@@ -15,8 +15,8 @@ interface NavItemProps extends NavObject {
 }
 
 const navItems: NavObject[] = [
-	{ name: "Home", href: "/" },
-	{ name: "Projects", href: "/projects" },
+	{ name: "Home", href: "#home-section" },
+	{ name: "Projects", href: "#projects-section" },
 	{ name: "Blog", href: "/projects" },
 	{ name: "About", href: "/projects" },
 ];
@@ -25,7 +25,7 @@ const Navbar = () => {
 	const [selected, setSelected] = useState<number>(0);
 
 	return (
-		<div className="flex flex-row m-8 justify-between">
+		<div className="flex flex-row p-8 justify-between w-screen">
 			<div className="my-auto">Contact me</div>
 			<div className="flex flex-row  p-2 rounded-full justify-center bg-gray-100">
 				{navItems.map((item, idx) => (
