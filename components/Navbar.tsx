@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useInView } from "react-intersection-observer";
 
 interface NavObject {
 	name: string;
