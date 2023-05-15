@@ -12,7 +12,7 @@ const Header = ({ title, subtitle, intro }: HeaderProps) => {
 			<div className="mb-4 font-semibold text-blue-400">{intro}</div>
 			<div className="text-4xl md:text-5xl lg:text-8xl font-bold">{title}</div>
 			<div className="text-3xl md:text-5xl lg:text-8xl font-bold text-gray-500">{subtitle}</div>
-			<Button>Contact me.</Button>
+			<Button className="md:hidden mt-4">Contact me.</Button>
 		</div>
 	);
 };

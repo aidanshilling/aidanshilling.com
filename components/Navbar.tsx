@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Button from "./Button";
 
 interface NavObject {
 	name: string;
@@ -26,7 +27,8 @@ const Navbar = () => {
 
 	return (
 		<div className="flex flex-row p-8 justify-center md:justify-between w-screen">
-			<div className="my-auto max-md:hidden">Contact me</div>
+			{/* <div className="my-auto max-md:hidden">Contact me</div> */}
+			<Button className="my-auto max-md:hidden">Contact me.</Button>
 			<div className="flex flex-row  p-2 rounded-full justify-center bg-gray-100">
 				{navItems.map((item, idx) => (
 					<NavItem
