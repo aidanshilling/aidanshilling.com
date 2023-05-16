@@ -16,10 +16,10 @@ interface NavItemProps extends NavObject {
 }
 
 const navItems: NavObject[] = [
-	{ name: "Home", href: "#home-section" },
-	{ name: "Projects", href: "#projects-section" },
-	{ name: "Blog", href: "/projects" },
-	{ name: "About", href: "/projects" },
+	{ name: "Home", href: "#home" },
+	// { name: "Projects", href: "#projects" },
+	{ name: "About", href: "#about" },
+	{ name: "Resume", href: "#resume" },
 ];
 
 const Navbar = () => {
