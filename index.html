@@ -1,7 +1,22 @@
 <html>
     <head>
         <title>aidanshilling.</title>
+
         <style>
+            @font-face {
+                font-family: 'Chicago 12.1';
+                src: url('fonts/chicago-12-1.woff2');
+                src: local('Chicago 12.1'), url('fonts/chicago-12-1.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Pixel Arial 11';
+                src: url('fonts/pixel-Arial.woff2');
+                src: local('Pixel Arial 11'), url('fonts/pixel-Arial.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
             * {
                 image-rendering: pixelated;
                 -webkit-font-smoothing: antialiased;
@@ -14,7 +29,6 @@
             }
             p {
                 font-family: "Pixel Arial 11";
-                src: url(fonts/pixel-Arial.woff2);
                 font-size: 8px;
                 padding: 0;
                 margin: 0;
@@ -23,8 +37,7 @@
                 letter-spacing: 1px;
                 transform: scale(1, 1.2);
                 font-size: 13px;
-                font-family: "Chicago 12.1";
-                src: url(fonts/chicago-12-1.woff2);
+                font-family: "Chicago 12.1"; 
                 padding: 0;
                 margin: 0;
             }
@@ -42,7 +55,6 @@
             .flex-container-row {
                 display: flex;
                 flex-direction: row;
-                align-items: top;
             }
             .content-box {
                 width: 160px;
