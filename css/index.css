@@ -26,14 +26,14 @@ body {
 }
 p {
     font-family: "Pixel Arial 11";
-    font-size: 8px;
+    font-size: 0.6rem;
     padding: 0;
     margin: 0;
 }
 h2 {
-    letter-spacing: 1px;
-    transform: scale(1, 1.2);
-    font-size: 13px;
+    letter-spacing: 0.1rem;
+    //transform: scale(1, 1.2);
+    font-size: 1.3rem;
     font-family: "Chicago 12.1"; 
     padding: 0;
     margin: 0;
