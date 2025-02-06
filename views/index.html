@@ -1,28 +1,101 @@
 <html>
-    <head>
-        <title>aidanshilling.com</title>
-        <link rel="stylesheet" href="/css/index.css">
-    </head>
-    <body>
-        <div class="h100 flex-container space-between">
-            <div style="margin-top: 6%" class="content-box flex-container">
-                <p>Welcome to</p>
-                <h2>aidanshilling.com</h2>
-            </div>
-            <div class="flex-container-row">
-                <div class="img-box flex-container shadow">
-                    <img src="/assets/pictures/beachy.jpg" />
-                    <p style="margin-top: 5px">I like to take pictures.</p>
-                </div>
-                <div class="img-box flex-container shadow">
-                    <img src="/assets/pictures/cooltree.png" />
-                    <p style="margin-top: 5px">This is a cool tree.</p>
-                </div>
-            </div>
 
-            <p style="margin-bottom: 6%">
-                Please allow me a few days to compete this site.
-            </p>
+<head>
+    <title>aidanshilling.com</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div id="navbar" class="flex-container">
+        <div class="flex-container-row align-center h100">
+            <h2>aidanshilling</h2>
+            <span class="dash" />
         </div>
-    </body>
+    </div>
+
+    <div id="drag1" class="draggable shadow" style="top: 100; left: 100;">
+        <div id="drag1-header" class="draggable-header">
+        </div>
+        <div class="img-box">
+            <img src="/assets/pictures/beachy.jpg" />
+        </div>
+        <p style="margin-top: 5px">I like to take pictures.</p>
+    </div>
+    <div id="drag2" class="draggable shadow">
+        <div id="drag2-header" class="draggable-header">
+        </div>
+        <div class="img-box">
+            <img src="/assets/pictures/cooltree.png" />
+        </div>
+        <p style="margin-top: 5px">This is a cool tree.</p>
+    </div>
+
+    <div class="h100 flex-container align-center space-between">
+
+        <div style="margin-top: 6%" class="content-box flex-container align-center">
+            <p>Welcome.</p>
+        </div>
+
+
+        <p style="margin-bottom: 6%">
+            Please allow me a few days to compete this site.
+        </p>
+    </div>
+
+    <script>
+        // Make the DIV element draggable:
+        let elems = document.getElementsByClassName("draggable");
+        for (let i = 0; i < elems.length; i++) {
+            dragElement(elems[i])
+        }
+
+        let topElem = elems[0]
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById(elmnt.id + "-header")) {
+                // if present, the header is where you move the DIV from:
+                document.getElementById(elmnt.id + "-header").onmousedown = dragMouseDown;
+            } else {
+                // otherwise, move the DIV from anywhere inside the DIV:
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                topElem.style.zIndex = "9";
+                elmnt.style.zIndex = "10";
+                topElem = elmnt;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                console.log("Hello!!")
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+
 </html>
