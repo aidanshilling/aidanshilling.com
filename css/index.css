@@ -19,9 +19,11 @@
     font-smooth: always;
 }
 body {
+    background-color: #ebe6dc;
+    background-size: cover;
+    background-image: url('/assets/pictures/cool-car.jpg');
     padding: 0;
     margin: 0;
-    background-color: #ebe6dc;
     height: 100%;
 }
 p {
